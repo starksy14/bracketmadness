@@ -3,7 +3,7 @@ const canvas1 = document.getElementById("canvas1");
 const ctx2 = canvas1.getContext("2d");
 
 
-ctx2.font = "10px bold, sans-serif";
+ctx2.font = "bold condensed 12px Arial";
 ctx2.fillStyle = "black";
 ctx2.fillText("FIRST ROUND", 0, 21);
 ctx2.fillText("SECOND ROUND", 115, 21);
@@ -14,7 +14,7 @@ ctx2.fillText("FIRST ROUND", 1330, 21);
 ctx2.fillText("SECOND ROUND", 1200, 21);
 ctx2.fillText("SWEET 16", 1100, 21);
 ctx2.fillText("ELITE 8", 970, 21);
-ctx2.fillText("FINAL FOUR", 790, 21);
+ctx2.fillText("FINAL FOUR", 810, 21);
 
 
 const canvas = document.getElementById("myCanvas");
@@ -84,19 +84,20 @@ MTeam12 = "(12)McNeese";
 MTeam13 = "(13)Samford";
 MTeam14 = "(14)Akron";
 MTeam15 = "(15)St. Peter's";
-MTeam16 = "(16)MTST/Gram";
+MTeam16 = "(16)Grambling";
 
-ctx.font = "12px normal, sans-serif";
-ctx.fillStyle = "black";
-ctx.fillText("NATIONAL", 685, 200);
-ctx.fillText("CHAMPIONSHIP", 668, 215);
-ctx.font = "normal 30px bold, sans-serif";
-ctx.fillText("MARCH", 660, 30);
-ctx.fillText("MADNESS", 640, 55);
-ctx.font = "normal 70px bold, sans-serif";
-ctx.fillStyle = "lightgray";
-ctx.fillText("2024", 638, 105);
-
+ctx.font = "bold condensed 10pt Arial";
+ctx.fillStyle = "lightblue";
+ctx.fillText("NATIONAL", 675, 200);
+ctx.fillText("CHAMPIONSHIP", 660, 213);
+ctx.font = "bold 30px Arial";
+ctx.fillText("BRACKET", 631, 30);
+ctx.fillText("MADNESS", 630, 55);
+{
+ctx.font = "bold 70px Arial";
+ctx.fillStyle = "orange";
+ctx.fillText("2024", 628, 105);
+}
 
 
 // Define the rectangles
@@ -163,7 +164,7 @@ const rectangles = [
     { x: 390, y: 830, width: 100, height: 25 },
     { x: 530, y: 230, width: 100, height: 25 },
     { x: 530, y: 710, width: 100, height: 25 },
-    { x: 650, y: 320, width: 125, height: 25 },
+    { x: 650, y: 320, width: 100, height: 25 },
     { x: 1300, y: 5, width: 100, height: 25 },
     { x: 1300, y: 35, width: 100, height: 25 },
     { x: 1300, y: 65, width: 100, height: 25 },
@@ -226,8 +227,8 @@ const rectangles = [
     { x: 910, y: 830, width: 100, height: 25 },
     { x: 770, y: 230, width: 100, height: 25 },
     { x: 770, y: 710, width: 100, height: 25 },
-    { x: 650, y: 640, width: 125, height: 25 },
-    { x: 650, y: 480, width: 125, height: 25 },
+    { x: 650, y: 640, width: 100, height: 25 },
+    { x: 650, y: 480, width: 100, height: 25 },
 ];
 
 const lines = [
@@ -380,7 +381,9 @@ const lines = [
   {  x: 889, y: 600, width: 5, height: 245 },
   {  x: 869, y: 240, width: 22, height: 5 },
   {  x: 869, y: 720, width: 22, height: 5 },
-  {  x: 770, y: 240, width: 5, height: 485 },
+  {  x: 750, y: 240, width: 22, height: 5 },
+  {  x: 750, y: 240, width: 5, height: 485 },
+  {  x: 750, y: 720, width: 22, height: 5 },
   {  x: 629, y: 240, width: 22, height: 5 },
   {  x: 629, y: 720, width: 22, height: 5 },
   {  x: 509, y: 720, width: 22, height: 5 },
@@ -393,7 +396,7 @@ rectangles.forEach(rect => {
 });
 
 lines.forEach(rect => {
-    ctx.fillStyle = "lightgray";
+    ctx.fillStyle = "lightblue";
     ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
 });
 
@@ -411,7 +414,7 @@ canvas.addEventListener('mousemove', function(event) {
             mouseY <= rect.y + rect.height
         ) {
             // Change the fill style when hovering
-            ctx.fillStyle = "gray";
+            ctx.fillStyle = "lightblue";
             ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
         } else {
             // Reset the fill style if not hovering
@@ -421,7 +424,7 @@ canvas.addEventListener('mousemove', function(event) {
     });
     {
 ctx.textAlign = "left";
-ctx.font = "8px sans-serif, bold";
+ctx.font = "bold condensed 8px Arial";
 ctx.fillStyle = "black";
 ctx.fillText(ETeam1, 11, 21,);
 ctx.fillText(ETeam16, 11, 51);
@@ -489,15 +492,15 @@ ctx.fillText(MTeam2, 1311, 921);
 ctx.fillText(MTeam15, 1311, 951);
 }
 {
-ctx.font = "30px normal, sans-serif";
-ctx.fillStyle = "lightgray";
+ctx.font = "bold 30px Arial";
+ctx.fillStyle = "lightblue";
 ctx.fillText("EAST", 400, 250);
 ctx.fillText("WEST", 400, 730);
 ctx.fillText("SOUTH", 915, 250);
 ctx.fillText("MIDWEST", 915, 730);
-ctx.font = "18px normal, sans-serif";
-ctx.fillStyle = "lightgray";
-ctx.fillText("CHAMPION", 664, 475);
+ctx.font = "bold condensed 18px Arial";
+ctx.fillStyle = "lightblue";
+ctx.fillText("CHAMPION", 662, 475);
 }
     }
 
